@@ -45,6 +45,9 @@ router.post('/createuser', [
   }
 })
 
+// creating Salt
+const salt = bcrypt.genSalt(10);
+
 // If there are errors, return bad request request and the erorrs.
 //async (req, res) => {
 //    const errors = validationResult(req);
