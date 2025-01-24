@@ -46,7 +46,8 @@ router.post('/createuser', [
 })
 
 // creating Salt
-const salt = bcrypt.genSalt(10);
+const salt = await bcrypt.genSalt(10);
+const secPass = await bcrypt.hash(req.body.password, salt);
 
 // If there are errors, return bad request request and the erorrs.
 //async (req, res) => {
